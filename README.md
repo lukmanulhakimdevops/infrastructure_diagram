@@ -3,10 +3,10 @@ Infrastructure Diagram Flow
 Proses Alur Sistem (Flow) 
 1. User Interaction Layer
 Proses Flow:   
-o Pengguna mengirimkan request dari Mobile/ Desktop/ API ke Content Delivery Network (CDN). Hal ini bisa dilakukan melalui HTTPS, dan CDN bertugas untuk menyediakan cache dan konten statis (seperti React JS Static Files) yang lebih cepat diakses oleh pengguna. 
+o Pengguna mengirimkan request dari Mobile/ Desktop/ API ke Content Delivery Network (CDN). Hal ini bisa dilakukan melalui HTTPS, dan CDN bertugas untuk menyediakan cache dan konten statis (seperti React JS Static Files) yang lebih cepat diakses oleh pengguna.
 o HA di layer ini tercapai dengan menggunakan Multiple CDN Edge Locations yang mendistribusikan request ke server terdekat dari pengguna, mengurangi latensi dan meningkatkan ketersediaan.
 
-2. Application Load Balancer (ALB) Layer 
+3. Application Load Balancer (ALB) Layer 
 Proses Flow: 
 o Setelah request mencapai CDN, request diteruskan ke Application Load Balancer (ALB) yang berfungsi untuk Layer 7 Routing, yaitu routing berdasarkan HTTP(S) request (misalnya, URL atau header). 
 o SSL Termination: ALB mengelola enkripsi dan dekripsi SSL untuk memastikan koneksi aman. 
